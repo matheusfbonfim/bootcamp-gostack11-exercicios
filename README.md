@@ -9,11 +9,18 @@
 - ### NIVEL 1
 - [01 - Back-end com Node.js](https://github.com/DanielObara/bootcamp-gostack-exercicios/tree/master/nivel-1/aula-1-conceitos-node) 🚀 Done :heavy_check_mark:
 
+## :memo: License
 
-## :memo: Licença
+O projeto está sobre a licença [MIT](./LICENSE) ❤️ 
 
-Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+Gostou? Deixe uma estrelinha para ajudar ⭐
 
----
-
-Feito com 💜 by Matheus Bonfim :wave: [Get in touch!](https://www.linkedin.com/in/matheus-bonfim-448667169/)
+<!-- Mensagem final -->
+<h3 align="center">
+Feito com ❤️ por <a href="https://www.linkedin.com/in/matheus-bonfim-448667169/">Matheus Bonfim</a>
+<br><br>
+<a href="https://rocketseat.com.br">
+  <img alt="Made by Rocketseat" src="https://img.shields.io/badge/made%20by-Rocketseat-%237519C1">
+</a>
+</h3>
+</h3>
