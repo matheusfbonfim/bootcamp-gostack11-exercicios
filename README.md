@@ -7,7 +7,7 @@
 ## Índice das aulas
 
 - ### NIVEL 1
-- [01 - Back-end com Node.js](https://github.com/DanielObara/bootcamp-gostack-exercicios/tree/master/nivel-1/aula-1-conceitos-node) :construction: In progress.. :construction:
+- [01 - Back-end com Node.js](https://github.com/matheusfbonfim/bootcamp-gostack11-exercicios/tree/master/nivel-1/backend-node) :construction: In progress.. :construction:
 - [02 - Front-end com React.js]() :construction: In progress.. :construction:
 - [03 - Mobile com React Native]() :construction: In progress.. :construction:
 - [04 - TypeScript]() :construction: In progress.. :construction:
