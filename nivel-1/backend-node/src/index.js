@@ -35,12 +35,42 @@ app.use(express.json())
  *
  */
 
+ /**
+  * Middleware:
+  * 
+  * Interceptador de requisições que pode interromper totalmente a 
+  * requisição ou alterar dados da requisição.
+  * 
+  * 
+  */
+
 // Armazenar o projetos - Array
 const projects = [];
 
-// Método GET - Buscando/ listando uma informação do back-end
-app.get('/projects', (request, response) => {
+function logRequest(request, response, next){
+  const {method, url} = request;
+
+  const logLabel = `[${method.toUpperCase()}] ${url}`;
+
+  console.log('1');
+  console.time(logLabel);
+
+  next(); // Próximo middleware
+
+  console.log('2');
+  console.timeEnd(logLabel);
+}
+
+function validateProjectId(request, response, next){
   
+}
+
+ app.use(logRequest);
+
+// Método GET - Buscando/ listando uma informação do back-end
+app.get('/projects',(request, response) => {
+  console.log('3');
+
   const {title} = request.query;
   
   // Todos os projetos que conter uma determinada palavra
@@ -49,7 +79,7 @@ app.get('/projects', (request, response) => {
   : projects;
 
   return response.json(results);
-})
+});
 
 // Create
 app.post('/projects', (request, response) => {
@@ -59,7 +89,7 @@ app.post('/projects', (request, response) => {
   projects.push(project);
 
   return response.json(project);
-})
+});
 
 // PUT -> Deve informar qual projeto deseja alterar
 // Ex: Atualizar o projeto do id 2: http://localhost:3333/projects/2
