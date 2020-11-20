@@ -4,13 +4,12 @@
   Exercícios - Bootcamp GoStack 11 🚀
 </h2>
 
-## Índice das aulas
+## Índice das aulas - Nível 1
 
-- ### NIVEL 1
-- [01 - Back-end com Node.js](https://github.com/DanielObara/bootcamp-gostack-exercicios/tree/master/nivel-1/aula-1-conceitos-node) 🚀 Done :heavy_check_mark:
-- [02 - Front-end com React.js]()🚀 Done :heavy_check_mark:
-- [03 - Mobile com React Native]()🚀 Done :heavy_check_mark:
-- [04 - TypeScript]() 🚀 Done :heavy_check_mark:
+- [01 - Back-end com Node.js](https://github.com/matheusfbonfim/bootcamp-gostack11-exercicios/tree/master/nivel-1/backend-node) :construction: In progress.. :construction:
+- [02 - Front-end com React.js]()
+- [03 - Mobile com React Native]()
+- [04 - TypeScript]() 
 
 ## :memo: License
 
@@ -27,4 +26,3 @@ Feito com ❤️ por <a href="https://www.linkedin.com/in/matheus-bonfim-4486671
 </a>
 </h3>
 </h3>
-
