@@ -41,10 +41,14 @@ const projects = [];
 // Método GET - Buscando/ listando uma informação do back-end
 app.get('/projects', (request, response) => {
   
-  //const {title, owner} = request.query;
-  //console.log(title, owner);
+  const {title} = request.query;
+  
+  // Todos os projetos que conter uma determinada palavra
+  const results = title 
+  ? projects.filter(project => project.title.includes(title))
+  : projects;
 
-  return response.json(projects);
+  return response.json(results);
 })
 
 // Create
