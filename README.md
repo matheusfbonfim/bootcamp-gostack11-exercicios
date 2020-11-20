@@ -8,6 +8,9 @@
 
 - ### NIVEL 1
 - [01 - Back-end com Node.js](https://github.com/DanielObara/bootcamp-gostack-exercicios/tree/master/nivel-1/aula-1-conceitos-node) 🚀 Done :heavy_check_mark:
+- [02 - Front-end com React.js]()🚀 Done :heavy_check_mark:
+- [03 - Mobile com React Native]()🚀 Done :heavy_check_mark:
+- [04 - TypeScript]() 🚀 Done :heavy_check_mark:
 
 ## :memo: License
 
@@ -24,3 +27,4 @@ Feito com ❤️ por <a href="https://www.linkedin.com/in/matheus-bonfim-4486671
 </a>
 </h3>
 </h3>
+
