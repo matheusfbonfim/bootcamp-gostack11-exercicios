@@ -8,9 +8,13 @@
   },
   "dependencies": {
     "express": "^4.17.1",
-    "uuidv4": "^6.2.5"
+    "uuidv4": "^6.2.5",
+    "webpac": "^0.0.1-security",
+    "webpack": "^5.9.0",
+    "webpack-dev-server": "^3.11.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.6"
+    "nodemon": "^2.0.6",
+    "webpack-cli": "^4.2.0"
   }
 }
