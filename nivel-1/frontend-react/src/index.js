@@ -1,3 +1,3 @@
 import { soma } from './soma';
 
-console.log(soma(1,8))
+console.log(soma(1,20))
