@@ -46,31 +46,41 @@ app.use(express.json())
 // Armazenar o projetos - Array
 const projects = [];
 
+// Mostra a rota sendo chamada pelo Insomnia
+// Quais rotas estão sendo chamadas e quais métodos
 function logRequest(request, response, next){
+  // Desestruturação -> Encontra o metodo e url da requisição
   const {method, url} = request;
 
+  // Coloca o método e a url
   const logLabel = `[${method.toUpperCase()}] ${url}`;
 
   console.log('1');
   console.time(logLabel);
 
+  // Chamar o próximo (Deixar os algoritmos seguintes a serem executados)
   next(); // Próximo middleware
 
   console.log('2');
   console.timeEnd(logLabel);
 }
 
+// Validar se o ID na rota de atualização ou delete 
 function validateProjectId(request, response, next){
   const { id } = request.params;
-
+  // isUuid é uma função que valida se é um ID mesmo (formato...)
   if(!isUuid(id)){
     return response.status(400).json({error: 'Invalid project id.'});
   }
   
+  // Depois de retornar ele finaliza a requisição
+  // Diferente de somente o next()
   return next();
 }
 
+// Toda ação executa a determinada função
 app.use(logRequest);
+// Usa o middleware especificamente nas rotas 
 app.use('/projects/:id', validateProjectId);
 
 // Método GET - Buscando/ listando uma informação do back-end
