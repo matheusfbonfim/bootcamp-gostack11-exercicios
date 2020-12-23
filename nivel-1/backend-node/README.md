@@ -6,7 +6,7 @@
   Back-end com Node.js
 </h3>
 
-<p align="center">Código do primeiro módulo do <a href="https://rocketseat.com.br/bootcamp">Bootcamp GoStack 11</a> 🎓</p>
+<p align="center">Código do primeiro módulo do <a href="https://rocketseat.com.br">Bootcamp GoStack 11</a> 🎓</p>
 
 <p align="center">
   <a href="https://www.linkedin.com/in/matheus-de-farias-bonfim-448667169/">
@@ -14,7 +14,7 @@
   </a>
   
   <a href="https://github.com/matheusfbonfim/bootcamp-gostack11-exercicios/tree/master/nivel-1/backend-node/commits/master">
-    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/matheusfbonfim/bootcamp-gostack-exercicios.svg">
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/matheusfbonfim/bootcamp-gostack11-exercicios.svg">
   </a>
 
   <img alt="License" src="https://img.shields.io/badge/license-MIT-%2304D361">	
