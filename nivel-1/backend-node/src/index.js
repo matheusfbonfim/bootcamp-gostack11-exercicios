@@ -81,6 +81,7 @@ app.get('/projects',(request, response) => {
   
   // Todos os projetos que conter uma determinada palavra
   const results = title 
+  // Verifica se no project inclui o titulo title
   ? projects.filter(project => project.title.includes(title))
   : projects;
 
@@ -141,10 +142,11 @@ app.delete('/projects/:id',(request, response) => {
   // Remover do array projects
   projects.splice(projectIndex, 1);
   
+  // Resposta vazia
   return response.status(204).send();
 })
 
 // Quando o servidor inicializa, indica uma mensagem
-app.listen(5005, () => {
+app.listen(3333, () => {
   console.log("🚀️ Back-end started!");
 })
