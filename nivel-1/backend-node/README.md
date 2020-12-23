@@ -13,7 +13,7 @@
     <img alt="Made by matheusfbonfim" src="https://img.shields.io/badge/made%20by-matheusfbonfim-%2304D361">
   </a>
   
-  <a href="https://github.com/matheusfbonfim/bootcamp-gostack11-exercicios/commits/master">
+  <a href="https://github.com/matheusfbonfim/bootcamp-gostack11-exercicios/tree/master/nivel-1/backend-node/commits/master">
     <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/matheusfbonfim/bootcamp-gostack-exercicios.svg">
   </a>
 
@@ -28,7 +28,7 @@
 <p align="center">
   <a href="#-instalacao-e-execução">Instalação e execução</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-como-contribuir">Como contribuir</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#memo-licença">Licença</a>
+  <a href="#License">Licença</a>
 </p>
 
 <p align="center">
