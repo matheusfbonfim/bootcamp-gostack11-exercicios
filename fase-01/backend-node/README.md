@@ -41,7 +41,7 @@
 ## 🚀 Instalação e execução
 
 1. Faça um clone desse repositório;
-2. Entre na pasta rodando `cd bootcamp-gostack11-exercicios/nivel-1/backend-node`;
+2. Entre na pasta rodando `cd bootcamp-gostack11-exercicios/fase-01/backend-node`;
 3. Rode `yarn` para instalar as dependências;
 4. Rode `yarn dev` para iniciar o servidor.
    
@@ -62,7 +62,7 @@ Gostou? Deixe uma estrelinha para ajudar ⭐
 
 <!-- Mensagem final -->
 <h3 align="center">
-Feito com ❤️ por <a href="https://www.linkedin.com/in/matheus-de-farias-bonfim-448667169/">Matheus Bonfim</a>
+Feito com ❤️ por <a href="https://www.linkedin.com/in/matheusfbonfim/">Matheus Bonfim</a>
 <br><br>
 <a href="https://rocketseat.com.br">
   <img alt="Made by Rocketseat" src="https://img.shields.io/badge/made%20by-Rocketseat-%237519C1">
