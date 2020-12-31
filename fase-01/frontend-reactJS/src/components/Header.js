@@ -2,10 +2,11 @@
 import React from 'react';
 
 // Componente cabeçalho
-function Header(){
+// Parametro -> todas as propriedades 
+function Header({ title }){
   return (
     <header>
-      <h1>ReactJS</h1>
+      <h1>{title}</h1>
     </header>
   );
 }

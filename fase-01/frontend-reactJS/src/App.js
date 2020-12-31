@@ -5,14 +5,19 @@ import React from 'react';
 import Header from './components/Header';
 
 /* Caso queira repetir o mesmo componente, necessário colocar uma div ou 
-   bloco por fora
+   bloco por fora ou fragment (<> code aqui.. </>)
 */
+
+/**
+ * Componente 
+ * Propriedade - informação que pode-se passar de um componente pai para um filho
+ */
 
 function App(){
   return (
     <>
-      <Header/>
-      <Header/>
+      <Header title="Homepage"/>
+      <Header title="Projects"/>
     </>
   ) ;
 }
