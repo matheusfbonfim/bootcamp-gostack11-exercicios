@@ -33,6 +33,27 @@ module.exports = {
           loader: "babel-loader",
         },
       }, 
+      // Regra para converter arquivos CSS 
+      {
+        // Identificando o tipo de arquivo
+        test: /\.css$/,
+        // Exclui os arquivos css do node_modules
+        exclude: /node_modules/,
+        // Loaders que serão utilizados na conversão
+        use: [
+          {loader: 'style-loader'},
+          {loader: 'css-loader'},
+        ]
+      },
+      // Regra para arquivos, como imagens
+      {
+        test: /.*\.(gif|png|jpe?g)$/i,
+        // Loader utilizado na conversão
+        use: {
+          loader: "file-loader",
+        }
+
+      },
     ]
   },
 }

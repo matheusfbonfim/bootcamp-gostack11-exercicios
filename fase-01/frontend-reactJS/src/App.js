@@ -1,6 +1,13 @@
 // Importa o react 
 import React, {useState} from 'react';
 
+// Importando o estilo -> Webpack reconhece e aplica o estilo
+// Webpack se encarrega de aplicar tudo que for implementado em App.css
+import './App.css';
+
+// Importando a imagem 
+import backgroundImage from './assets/background.jpeg'
+
 // Importando o componente Header - cabeçalho
 import Header from './components/Header';
 
@@ -36,6 +43,8 @@ function App(){
   return (
     <>
       <Header title="Projects"/>
+
+      <img width= {500} src={backgroundImage} alt=""/>
       
       <ul>
         {projects.map(project => <li key={project}>{project}</li>)}
