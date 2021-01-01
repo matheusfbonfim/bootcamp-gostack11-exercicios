@@ -37,20 +37,34 @@ function App(){
     // Quando api responder, terá uma resposta em then -> promise
     api.get('/projects').then(response => {
       //response retorna as informações do backend
+      // setProjects preenche os projetos
       setProjects(response.data)
     });
   }, []);
 
   // Função para adicionar um projeto
     // Utilizado no onClick -> evento do botão
-  function handleAddProject(){
+  async function handleAddProject(){
     
     // Imutabilidade
       // Temos que criar um novo componente, e não alterar o projects
       //projects.push(`Novo projeto ${Date.now()}`);
-    setProjects([...projects, `Novo projeto ${Date.now()}`]);
     
-    console.log(projects);
+      // setProjects([...projects, `Novo projeto ${Date.now()}`]);
+    
+    // Para atualizar necessário usar utilizar a API com método POST
+    // POST no back-end já tem a implementação para atualizar 
+    // Todas as informações estará no response -> data
+    const response =  await api.post('/projects', {
+      title: `Novo projeto ${Date.now()}`,
+      owner: "Diego Fernandes"
+    })
+
+    // Propriedade data vindo de response
+    const project = response.data;
+
+    // Atualiza o projects
+    setProjects([...projects, project])
   }
 
   return (
