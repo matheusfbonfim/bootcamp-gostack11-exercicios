@@ -1,12 +1,12 @@
 // Importa o react 
-import React, {useState} from 'react';
+import React, {useState, useEffect } from 'react';
+
+// importando a api de services - Back-end
+import api from './services/api'
 
 // Importando o estilo -> Webpack reconhece e aplica o estilo
 // Webpack se encarrega de aplicar tudo que for implementado em App.css
 import './App.css';
-
-// Importando a imagem 
-import backgroundImage from './assets/background.jpeg'
 
 // Importando o componente Header - cabeçalho
 import Header from './components/Header';
@@ -26,7 +26,20 @@ function App(){
   // useState retorna um array com 2 posições
     // 1. Variavel com seu valor inicial
     // 2. Função para atualizarmos esse valor
-  const [projects, setProjects] = useState(['Desenvolvimento de app', 'Front-end web']);
+  const [projects, setProjects] = useState([]);
+
+  // useEffect -> Dispara um função 
+    // 1 Parametro -> Função a ser disparada
+    // 2 Parametro -> Quando será disparada
+      // [] -> Será disparado somente quando o componente App for exibido em tela
+  useEffect(() => {
+    // api -> com axios já linkado no localhost
+    // Quando api responder, terá uma resposta em then -> promise
+    api.get('/projects').then(response => {
+      //response retorna as informações do backend
+      setProjects(response.data)
+    });
+  }, []);
 
   // Função para adicionar um projeto
     // Utilizado no onClick -> evento do botão
@@ -43,11 +56,9 @@ function App(){
   return (
     <>
       <Header title="Projects"/>
-
-      <img width= {500} src={backgroundImage} alt=""/>
-      
+ 
       <ul>
-        {projects.map(project => <li key={project}>{project}</li>)}
+        {projects.map(project => <li key={project.id}>{project.title}</li>)}
       </ul>
       
       <button type="button" onClick={handleAddProject}>Adicionar projeto</button>

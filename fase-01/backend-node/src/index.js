@@ -9,12 +9,18 @@
 const express = require('express');
 const {uuid, isUuid} = require("uuidv4"); // ID Único universal
 
+// Importando o cors 
+const cors = require('cors');
+
 const app = express();
 
 // Por padrão o express não interpreta os envios no formato JSON
 // Necessário informar que a API irá receber informações no formato JSON
 // ".use" faz com que todas as rotas considere o que for estipulado
 app.use(express.json())
+
+// app.use(cors()) -> Permiti que qualquer front end tenha acesso ao nosso back end 
+app.use(cors());
 
 /**
  * Métodos HTTP:
