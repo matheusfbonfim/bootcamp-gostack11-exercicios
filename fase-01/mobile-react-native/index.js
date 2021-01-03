@@ -4,7 +4,7 @@
 
 import {AppRegistry} from 'react-native';
 // Importando a aplicacao de dentro de source (src)
-import App from './src/index';
+import App from './src';
 import {name as appName} from './app.json';
 
 // registerComponent -> renderizar 
