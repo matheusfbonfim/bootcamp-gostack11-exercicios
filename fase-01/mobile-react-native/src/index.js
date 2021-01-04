@@ -25,6 +25,7 @@ export default function App(){
   return (
     <>
       <StatusBar barStyle="light-content" backgroundColor="#7159c1"/>
+      
       {/* SafeAreaView -> Aparecer só na área segura/ visivel da aplicação
        e não ultrapassar limites */}
       <SafeAreaView style={style.container}>
