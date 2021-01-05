@@ -41,7 +41,8 @@
 
 ## 💻 Projeto
 
-Projeto para criação do frontend web utilizando ReactJS e consumindo a API desenvolvida anteriormente na backend-node.
+* Projeto para criação do frontend web utilizando ReactJS
+* Utilização da API desenvolvida anteriormente na backend-node.
 
 ## 🚀 Instalação e execução
 
