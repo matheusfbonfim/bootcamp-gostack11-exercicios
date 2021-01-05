@@ -1,10 +1,10 @@
 <img alt="GoStack" src="https://storage.googleapis.com/golden-wind/bootcamp-gostack/header-desafios.png" />
 
 <h2 align="center">
-  Exercícios - Bootcamp GoStack 11 🚀
+  Exercícios - Fase 01 🚀
 </h2>
 
-## Índice das aulas - Fase 01
+## Índice das aulas
 
 - [01 - Back-end com Node.js](https://github.com/matheusfbonfim/bootcamp-gostack11-exercicios/tree/master/fase-01/backend-node) 🚀 Done :heavy_check_mark: 
 - [02 - Front-end com React.js](https://github.com/matheusfbonfim/bootcamp-gostack11-exercicios/tree/master/fase-01/frontend-reactJS) 🚀 Done :heavy_check_mark: 
