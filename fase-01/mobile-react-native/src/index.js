@@ -52,6 +52,7 @@ export default function App(){
         */
         }
         <FlatList 
+          style={style.container}
           data= {projects}
           keyExtractor={project => project.id}
           renderItem= {({ item }) =>(
@@ -59,6 +60,14 @@ export default function App(){
           )}
         />
   
+        <TouchableOpacity 
+          activeOpacity={0.6} 
+          style={style.button} 
+          onPress={handleAddProject}
+        >
+          <Text style={style.buttonText}>Adicionar projeto</Text>
+        </TouchableOpacity>
+      
       </SafeAreaView>      
 
       {/* <View style={style.container}>
@@ -68,15 +77,6 @@ export default function App(){
           );
         })}
       </View> */}
-      <TouchableOpacity 
-        activeOpacity={0.6} 
-        style={style.button} 
-        onPress={handleAddProject}
-      >
-        <Text style={style.buttonText}>Adicionar projeto</Text>
-      </TouchableOpacity>
-
-      
 
     </>  
    );
@@ -91,6 +91,7 @@ const style = StyleSheet.create({
   },
 
   project:{
+    // Cor da fonte
     color: '#FFF',
     fontSize: 30,
   },
@@ -110,8 +111,10 @@ const style = StyleSheet.create({
   },
 
   buttonText: {
+    // Negrito
     fontWeight: 'bold',
-    fontSize: 16
+    // Tamanho da fonte
+    fontSize: 16,
   },
 
 })
