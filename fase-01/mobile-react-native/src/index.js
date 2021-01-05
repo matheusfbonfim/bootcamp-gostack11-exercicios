@@ -5,7 +5,7 @@ import React, {useState, useEffect} from 'react';
 import api from './services/api';
 
 // Importando como se fosse uma "div" do HTML -> View 
-import {SafeAreaView,FlatList, Text, StyleSheet, StatusBar} from 'react-native';
+import {SafeAreaView,FlatList, Text, StyleSheet, StatusBar, TouchableOpacity} from 'react-native';
 
 export default function App(){
   // Estado para armazenar os projetos
@@ -21,6 +21,21 @@ export default function App(){
       setProjects(response.data);
     })
   }, []);
+
+  // Função para adicionar projetos
+  async function handleAddProject(){
+    // Método de atualizar POST, que além de adicionar na api retorna o projeto
+    const response = await api.post('projects',{
+      title: `Novo projeto ${Date.now()}`,
+      owner: "Matheus de Farias"
+    });
+
+    const project = response.data;
+
+    // Adicionar ao projeto -> projects -> respeitando a imutabilidade
+    setProjects([...projects, project])
+  }
+
 
   return (
     <>
@@ -53,6 +68,16 @@ export default function App(){
           );
         })}
       </View> */}
+      <TouchableOpacity 
+        activeOpacity={0.6} 
+        style={style.button} 
+        onPress={handleAddProject}
+      >
+        <Text style={style.buttonText}>Adicionar projeto</Text>
+      </TouchableOpacity>
+
+      
+
     </>  
    );
 }
@@ -65,9 +90,28 @@ const style = StyleSheet.create({
     backgroundColor:'#7159c1',
   },
 
-  project: {
+  project:{
     color: '#FFF',
     fontSize: 30,
+  },
+
+  button:{
+    // Cor de fundo
+    backgroundColor:'#FFF',
+    // Margem em todos lados
+    margin: 20,
+    //Altura
+    height: 50,
+    // Borda arredondada
+    borderRadius: 4,
+    //Alinhar ao centro
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+
+  buttonText: {
+    fontWeight: 'bold',
+    fontSize: 16
   },
 
 })
