@@ -52,7 +52,7 @@
 * É necessário fazer as configurações do ambiente React Native com a instalação do Android Studio. 
 * Para mais informações acesse: [Configuração de ambiente](https://react-native.rocketseat.dev/)
 
-### Procedimentos
+ <p><strong>Procedimentos</strong></p>
 
 1. Faça um clone desse repositório;
 2. Entre na pasta rodando `cd bootcamp-gostack11-exercicios/fase-03/mobile-react-native`;
