@@ -28,7 +28,7 @@
 <p align="center">
   <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-instalação-e-execução">Instalação e execução</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-	<a href="#-informações-extras">Informações extras</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-informações-extras">Informações extras</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-como-contribuir">Como contribuir</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#License">Licença</a>
 </p>
@@ -49,8 +49,10 @@
 
 ⚠️ ATENÇÂO! ⚠️
 
-É necessário fazer as configurações do ambiente React Native com a instalação do Android Studio e configuração de algumas variáveis de ambiente. 
-Para mais informações acesse: [Configuração de ambiente](https://react-native.rocketseat.dev/)
+* É necessário fazer as configurações do ambiente React Native com a instalação do Android Studio e configuração de algumas variáveis de ambiente. 
+* Para mais informações acesse: [Configuração de ambiente](https://react-native.rocketseat.dev/)
+
+### Procedimentos
 
 1. Faça um clone desse repositório;
 2. Entre na pasta rodando `cd bootcamp-gostack11-exercicios/fase-03/mobile-react-native`;
