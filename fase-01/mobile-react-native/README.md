@@ -3,10 +3,10 @@
 </h1>
 
 <h3 align="center">
-  Front-end com ReactJS
+  Mobile com React-Native
 </h3>
 
-<p align="center">Código do segundo módulo do <a href="https://rocketseat.com.br">Bootcamp GoStack 11</a> 🎓</p>
+<p align="center">Código do terceiro módulo do <a href="https://rocketseat.com.br">Bootcamp GoStack 11</a> 🎓</p>
 
 <p align="center">
   <a href="https://www.linkedin.com/in/matheusfbonfim/">
@@ -28,6 +28,7 @@
 <p align="center">
   <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-instalação-e-execução">Instalação e execução</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+	<a href="#-informações-extras">Informações extras</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-como-contribuir">Como contribuir</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#License">Licença</a>
 </p>
@@ -41,19 +42,26 @@
 
 ## 💻 Projeto
 
-* Projeto para criação do frontend web utilizando ReactJS
-* Utilização da API desenvolvida anteriormente na backend-node.
+* Projeto de introdução ao mobile utilizando React Native.
+* Utilização da API desenvolvida anteriormente no backend-node.
 
 ## 🚀 Instalação e execução
 
 ⚠️ ATENÇÂO! ⚠️
 
-Primeiramente, é necessário rodar o backend criado anteriormente na pasta backend-node
+É necessário fazer as configurações do ambiente React Native com a instalação do Android Studio e configuração de algumas variáveis de ambiente. 
+Para mais informações acesse: [Configuração de ambiente](https://react-native.rocketseat.dev/)
 
 1. Faça um clone desse repositório;
-2. Entre na pasta rodando `cd bootcamp-gostack11-exercicios/fase-01/frontend-reactJS`;
+2. Entre na pasta rodando `cd bootcamp-gostack11-exercicios/fase-03/mobile-react-native`;
 3. Rode `yarn` para instalar as dependências;
-4. Rode `yarn dev` para iniciar o servidor.
+4. Rode `npx react-native run-android` ou `yarn android` para buildar;
+5. Rode `npx react-native start` ou `yarn start` para startar.
+
+## ℹ️ Informações extras
+
+Caso você esteja usando um sistema Linux, é preciso executar o metro bundler antes de executar o app. 
+Para isso, abra um novo terminal e execute comando npx react-native start
    
 ## 🤔 Como contribuir
 
