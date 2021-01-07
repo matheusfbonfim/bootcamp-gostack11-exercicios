@@ -49,7 +49,7 @@
 
 ⚠️ ATENÇÂO! ⚠️
 
-* É necessário fazer as configurações do ambiente React Native com a instalação do Android Studio e configuração de algumas variáveis de ambiente. 
+* É necessário fazer as configurações do ambiente React Native com a instalação do Android Studio. 
 * Para mais informações acesse: [Configuração de ambiente](https://react-native.rocketseat.dev/)
 
 ### Procedimentos
