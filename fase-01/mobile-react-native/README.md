@@ -55,7 +55,7 @@
  <p><strong>Procedimentos</strong></p>
 
 1. Faça um clone desse repositório;
-2. Entre na pasta rodando `cd bootcamp-gostack11-exercicios/fase-03/mobile-react-native`;
+2. Entre na pasta rodando `cd bootcamp-gostack11-exercicios/fase-01/mobile-react-native`;
 3. Rode `yarn` para instalar as dependências;
 4. Rode `npx react-native run-android` ou `yarn android` para buildar;
 5. Rode `npx react-native start` ou `yarn start` para startar.
