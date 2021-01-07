@@ -43,7 +43,7 @@
 ## 💻 Projeto
 
 * Projeto de introdução ao mobile utilizando React Native.
-* Utilização da API desenvolvida anteriormente no backend-node.
+* Em conjunto com a API desenvolvida anteriormente no backend-node.
 
 ## 🚀 Instalação e execução
 
