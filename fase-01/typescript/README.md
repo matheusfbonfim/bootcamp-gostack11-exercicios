@@ -3,7 +3,7 @@
 </h1>
 
 <h3 align="center">
-  MTypeScript
+  TypeScript
 </h3>
 
 <p align="center">Código do quarto módulo do <a href="https://rocketseat.com.br">Bootcamp GoStack 11</a> 🎓</p>
