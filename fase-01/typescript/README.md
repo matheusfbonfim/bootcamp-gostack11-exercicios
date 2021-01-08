@@ -52,7 +52,7 @@
 
 ## ℹ️ Informações extras
 
-Todo código transpilado de TS para JS ficará dentro de dist conforme a configuração que fizemos em `outDir` dentro de tsConfig.js
+* Todo código transpilado de TS para JS ficará dentro de dist conforme a configuração que fizemos em `outDir` dentro de tsConfig.js
    
 ## 🤔 Como contribuir
 
