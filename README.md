@@ -10,9 +10,9 @@
 - [01 - Back-end com Node.js](https://github.com/matheusfbonfim/bootcamp-gostack11-exercicios/tree/master/fase-01/backend-node) 🚀 Done :heavy_check_mark:
 - [02 - Front-end com React.js](https://github.com/matheusfbonfim/bootcamp-gostack11-exercicios/tree/master/fase-01/frontend-reactJS) 🚀 Done :heavy_check_mark:
 - [03 - Mobile com React Native](https://github.com/matheusfbonfim/bootcamp-gostack11-exercicios/tree/master/fase-01/mobile-react-native) 🚀 Done :heavy_check_mark:
-- [04 - TypeScript]() :construction: In progress.. :construction:
+- [04 - TypeScript](https://github.com/matheusfbonfim/bootcamp-gostack11-exercicios/tree/master/fase-01/typescript) 🚀 Done :heavy_check_mark:
 - ### FASE 02
-- [05 - Primeiro projeto com Node.js]() 
+- [05 - Primeiro projeto com Node.js]() :construction: In progress.. :construction:
 - [06 - Iniciando Back-end do app]() 
 - ### FASE 03
 - [07 - Primeiro projeto com React]()
