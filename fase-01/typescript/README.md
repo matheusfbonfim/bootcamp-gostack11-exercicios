@@ -33,10 +33,6 @@
   <a href="#License">Licença</a>
 </p>
 
-<p align="center">
-	<a href="https://insomnia.rest/run/?label=01-backend-node&uri=https%3A%2F%2Fgithub.com%2Fmatheusfbonfim%2Fbootcamp-gostack11-exercicios%2Fblob%2Fmaster%2Fnivel-1%2Fbackend-node%2Fexport_Insomnia" target="_blank"><img src="https://insomnia.rest/images/run.svg" alt="Run in Insomnia">
-  </a>
-</p>
 <hr>
 <br/>
 
