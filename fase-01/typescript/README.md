@@ -3,17 +3,17 @@
 </h1>
 
 <h3 align="center">
-  Mobile com React-Native
+  MTypeScript
 </h3>
 
-<p align="center">Código do terceiro módulo do <a href="https://rocketseat.com.br">Bootcamp GoStack 11</a> 🎓</p>
+<p align="center">Código do quarto módulo do <a href="https://rocketseat.com.br">Bootcamp GoStack 11</a> 🎓</p>
 
 <p align="center">
   <a href="https://www.linkedin.com/in/matheusfbonfim/">
     <img alt="Made by matheusfbonfim" src="https://img.shields.io/badge/made%20by-matheusfbonfim-%2304D361">
   </a>
   
-  <a href="https://github.com/matheusfbonfim/bootcamp-gostack11-exercicios/tree/master/nivel-1/frontend-reactJS/commits/master">
+  <a href="https://github.com/matheusfbonfim/bootcamp-gostack11-exercicios/tree/master/nivel-1/typescript/commits/master">
     <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/matheusfbonfim/bootcamp-gostack11-exercicios.svg">
   </a>
 
@@ -42,28 +42,20 @@
 
 ## 💻 Projeto
 
-* Projeto de introdução ao mobile utilizando React Native.
-* Em conjunto com a API desenvolvida anteriormente no backend-node.
+* Projeto de introdução ao TypeScript.
 
 ## 🚀 Instalação e execução
 
-⚠️ ATENÇÂO! ⚠️
-
-* É necessário fazer as configurações do ambiente React Native com a instalação do Android Studio. 
-* Para mais informações acesse: [Configuração de ambiente](https://react-native.rocketseat.dev/)
-
  <p><strong>Procedimentos</strong></p>
-
 1. Faça um clone desse repositório;
-2. Entre na pasta rodando `cd bootcamp-gostack11-exercicios/fase-01/mobile-react-native`;
+2. Entre na pasta rodando `cd bootcamp-gostack11-exercicios/fase-01/typescript`;
 3. Rode `yarn` para instalar as dependências;
-4. Rode `npx react-native run-android` ou `yarn android` para buildar;
-5. Rode `npx react-native start` ou `yarn start` para startar.
+4. Rode `yarn tsc` para transpilar de TS para JS;
+5. Rode `node dist/index.js`;
 
 ## ℹ️ Informações extras
 
-Caso você esteja usando um sistema Linux, é preciso executar o metro bundler antes de executar o app. 
-Para isso, abra um novo terminal e execute comando npx react-native start
+Todo código transpilado de TS para JS ficará dentro de dist conforme a configuração que fizemos em `outDir` dentro de tsConfig.js
    
 ## 🤔 Como contribuir
 
