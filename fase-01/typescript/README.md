@@ -43,6 +43,7 @@
 ## 🚀 Instalação e execução
 
  <p><strong>Procedimentos</strong></p>
+ 
 1. Faça um clone desse repositório;
 2. Entre na pasta rodando `cd bootcamp-gostack11-exercicios/fase-01/typescript`;
 3. Rode `yarn` para instalar as dependências;
