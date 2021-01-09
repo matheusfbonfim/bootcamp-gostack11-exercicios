@@ -1,0 +1,15 @@
+# EditorConfig is awesome: https://EditorConfig.org
+
+# top-most EditorConfig file
+root = true
+
+[*]
+indent_style = space
+indent_size = 2
+#  Modo de pular a linha nos SO 
+end_of_line = lf
+charset = utf-8
+# TIrar os espaços desnecessários
+trim_trailing_whitespace = true
+# Para no final do código ter uma linha em branco
+insert_final_newline = true
