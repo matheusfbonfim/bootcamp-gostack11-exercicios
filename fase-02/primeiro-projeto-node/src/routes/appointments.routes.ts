@@ -12,19 +12,18 @@ const appointments = [];
 // index está sendo indicado
 // gttp://localhost:3333/appointments
 appointmentsRouter.post('/', (request, response) => {
-  const { provider, date } = request.body;
+  // const { provider, date } = request.body;
 
-  const appointment = {
-    id: uuid(),
-    provider,
-    date,
-  };
+  // const appointment = {
+  //   id: uuid(),
+  //   provider,
+  //   date,
+  // };
 
-  console.log(appointment);
-  // Adicionando ao dicionário
-  appointments.push(appointment);
+  // // Adicionando ao dicionário
+  // appointments.push(appointment);
 
-  return response.json();
+  return response.json(request.body);
 });
 
 export default appointmentsRouter;
