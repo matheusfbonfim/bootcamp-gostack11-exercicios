@@ -10,20 +10,21 @@ const appointments = [];
 
 // Não é necessário identificar a rota por completo pois no
 // index está sendo indicado
-// gttp://localhost:3333/appointments
+// http://localhost:3333/appointments
+
 appointmentsRouter.post('/', (request, response) => {
-  // const { provider, date } = request.body;
+  const { provider, date } = request.body;
 
-  // const appointment = {
-  //   id: uuid(),
-  //   provider,
-  //   date,
-  // };
+  const appointment = {
+    id: uuid(),
+    provider,
+    date,
+  };
 
-  // // Adicionando ao dicionário
-  // appointments.push(appointment);
+  // Adicionando ao dicionário
+  appointments.push(appointment);
 
-  return response.json(request.body);
+  return response.json(appointment);
 });
 
 export default appointmentsRouter;
