@@ -3,17 +3,22 @@ import { Router } from 'express';
 // Importar funções da biblioteca de datas e horas
 // parseISO -> converte string em date do JS
 // startOfHour -> Zera minutos e segundos e starta somente a hora
-import { startOfHour, parseISO, isEqual } from 'date-fns';
-// Importando o modelo/entidade de appointment
-import Appointment from '../models/Appointment';
+import { startOfHour, parseISO } from 'date-fns';
+
+// Importando o repositório de appointment
+import AppointmentsRepository from '../repositories/AppointmentsRepository';
 
 // ==============================================================
+// INSTÂNCIAS
 
 const appointmentsRouter = Router();
 
-// Temporário - array de agendamentos
-// Necessário adicionar tipagem para essa variavél -> class
-const appointments: Appointment[] = [];
+// Criando uma instância da class repositorio
+// Construtor com array vazio de agendamentos
+const appointmentsRepository = new AppointmentsRepository();
+
+// ==============================================================
+// ROTAS
 
 // Não é necessário identificar a rota por completo pois no
 // index está sendo indicado
@@ -24,9 +29,10 @@ appointmentsRouter.post('/', (request, response) => {
 
   const parsedDate = startOfHour(parseISO(date));
 
-  const findAppointmentInSameDate = appointments.find((appointment) => {
-    return isEqual(parsedDate, appointment.date);
-  });
+  // Por meio do repositorio, verifica se tem agendamento na mesma data
+  const findAppointmentInSameDate = appointmentsRepository.findByDate(
+    parsedDate,
+  );
 
   if (findAppointmentInSameDate) {
     return response
@@ -34,11 +40,7 @@ appointmentsRouter.post('/', (request, response) => {
       .json({ message: 'This appointment is already booked' });
   }
 
-  // Criação de uma nova entidade de agendamento
-  const appointment = new Appointment(provider, parsedDate);
-
-  // Adicionando ao dicionário
-  appointments.push(appointment);
+  const appointment = appointmentsRepository.create(provider, parsedDate);
 
   return response.json(appointment);
 });
