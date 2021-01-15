@@ -1,21 +1,18 @@
 // Importar Router -> Modulo de rotas do express
 import { Router } from 'express';
-// Importar para criar id's
-import { uuid } from 'uuidv4';
 // Importar funções da biblioteca de datas e horas
+// parseISO -> converte string em date do JS
+// startOfHour -> Zera minutos e segundos e starta somente a hora
 import { startOfHour, parseISO, isEqual } from 'date-fns';
+// Importando o modelo/entidade de appointment
+import Appointment from '../models/Appointment';
+
+// ==============================================================
 
 const appointmentsRouter = Router();
 
-// Fazendo o tipo de appointment
-interface Appointment {
-  id: string;
-  provider: string;
-  date: Date;
-}
-
 // Temporário - array de agendamentos
-// Necessário adicionar tipagem para essa variavél
+// Necessário adicionar tipagem para essa variavél -> class
 const appointments: Appointment[] = [];
 
 // Não é necessário identificar a rota por completo pois no
@@ -25,8 +22,6 @@ const appointments: Appointment[] = [];
 appointmentsRouter.post('/', (request, response) => {
   const { provider, date } = request.body;
 
-  // parseISO -> converte string em date do JS
-  // startOfHour -> Zera minutos e segundos e starta somente a hora
   const parsedDate = startOfHour(parseISO(date));
 
   const findAppointmentInSameDate = appointments.find((appointment) => {
@@ -39,11 +34,8 @@ appointmentsRouter.post('/', (request, response) => {
       .json({ message: 'This appointment is already booked' });
   }
 
-  const appointment = {
-    id: uuid(),
-    provider,
-    date: parsedDate,
-  };
+  // Criação de uma nova entidade de agendamento
+  const appointment = new Appointment(provider, parsedDate);
 
   // Adicionando ao dicionário
   appointments.push(appointment);
