@@ -12,6 +12,11 @@ class AppointmentsRepository {
     this.appointments = [];
   }
 
+  // Retorna todos os repositorios
+  public all(): Appointment[] {
+    return this.appointments;
+  }
+
   // Procurar elemento pela Date e indica a existência ou não
   public findByDate(date: Date): Appointment | null {
     const findAppointment = this.appointments.find((appointment) => {
