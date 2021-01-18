@@ -24,14 +24,14 @@ const appointmentsRepository = new AppointmentsRepository();
 // index está sendo indicado
 // http://localhost:3333/appointments
 
-// Listar todos os agendamentos
+// LISTAR todos os agendamentos
 appointmentsRouter.get('/', (request, response) => {
   const appointments = appointmentsRepository.all();
 
   return response.json(appointments);
 });
 
-// Rota para criação de agendamento
+// CRIAÇÃO de agendamento
 appointmentsRouter.post('/', (request, response) => {
   const { provider, date } = request.body;
 
@@ -48,7 +48,10 @@ appointmentsRouter.post('/', (request, response) => {
       .json({ message: 'This appointment is already booked' });
   }
 
-  const appointment = appointmentsRepository.create(provider, parsedDate);
+  const appointment = appointmentsRepository.create({
+    provider,
+    date: parsedDate,
+  });
 
   return response.json(appointment);
 });

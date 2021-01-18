@@ -3,6 +3,15 @@ import { isEqual } from 'date-fns';
 // Importa métodos de dates
 import Appointment from '../models/Appointment';
 
+// ==================================================
+
+// Criar um tipo de dados para o parametro de criação
+// Conceitos de DTO - Data Transfer Object
+interface CreateAppointmentDTO {
+  provider: string;
+  date: Date;
+}
+
 // Classe - Repositório de agendamentos
 class AppointmentsRepository {
   // Variavel privada - acesso excluso da class - Array de class de agendamentos
@@ -27,9 +36,9 @@ class AppointmentsRepository {
   }
 
   // Método - Criação do agendamento
-  public create(provider: string, date: Date): Appointment {
+  public create({ provider, date }: CreateAppointmentDTO): Appointment {
     // Criação de uma nova entidade de agendamento
-    const appointment = new Appointment(provider, date);
+    const appointment = new Appointment({ provider, date });
 
     // Insere o agendamento no array
     this.appointments.push(appointment);
