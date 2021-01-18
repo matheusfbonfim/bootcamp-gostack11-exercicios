@@ -17,6 +17,7 @@ class Appointment {
 
   date: Date;
 
+  // Omit -> Cria uma tipagem com todas propriedades da class, - id
   constructor({ provider, date }: Omit<Appointment, 'id'>) {
     this.id = uuid();
     this.provider = provider;
