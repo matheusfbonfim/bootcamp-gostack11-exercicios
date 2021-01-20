@@ -2,11 +2,13 @@
 import { Router } from 'express';
 // Importar funções da biblioteca de datas e horas
 // parseISO -> converte string em date do JS
-// startOfHour -> Zera minutos e segundos e starta somente a hora
-import { startOfHour, parseISO } from 'date-fns';
+import { parseISO } from 'date-fns';
 
 // Importando o repositório de appointment
 import AppointmentsRepository from '../repositories/AppointmentsRepository';
+
+// Importações de Services
+import CreateAppointmentService from '../services/CreateAppointmentService';
 
 // ==============================================================
 // INSTÂNCIAS
@@ -33,27 +35,25 @@ appointmentsRouter.get('/', (request, response) => {
 
 // CRIAÇÃO de agendamento
 appointmentsRouter.post('/', (request, response) => {
-  const { provider, date } = request.body;
+  try {
+    const { provider, date } = request.body;
 
-  const parsedDate = startOfHour(parseISO(date));
+    const parsedDate = parseISO(date);
 
-  // Por meio do repositorio, verifica se tem agendamento na mesma data
-  const findAppointmentInSameDate = appointmentsRepository.findByDate(
-    parsedDate,
-  );
+    // Instância o serviço a ser chamado, com o repositório (database e manipulações)
+    const createAppointment = new CreateAppointmentService(
+      appointmentsRepository,
+    );
 
-  if (findAppointmentInSameDate) {
-    return response
-      .status(400)
-      .json({ message: 'This appointment is already booked' });
+    const appointment = createAppointment.execute({
+      provider,
+      date: parsedDate,
+    });
+
+    return response.json(appointment);
+  } catch (err) {
+    return response.status(400).json({ error: err.message });
   }
-
-  const appointment = appointmentsRepository.create({
-    provider,
-    date: parsedDate,
-  });
-
-  return response.json(appointment);
 });
 
 export default appointmentsRouter;
