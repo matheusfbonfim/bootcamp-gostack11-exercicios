@@ -12,10 +12,10 @@
 - [03 - Mobile com React Native](https://github.com/matheusfbonfim/bootcamp-gostack11-exercicios/tree/master/fase-01/mobile-react-native) 🚀 Done :heavy_check_mark:
 - [04 - TypeScript](https://github.com/matheusfbonfim/bootcamp-gostack11-exercicios/tree/master/fase-01/typescript) 🚀 Done :heavy_check_mark:
 - ### FASE 02
-- [05 - Primeiro projeto com Node.js]() :construction: In progress.. :construction:
-- [06 - Iniciando Back-end do app]() 
+- [05 - Primeiro projeto com Node.js](https://github.com/matheusfbonfim/bootcamp-gostack11-exercicios/tree/master/fase-02/primeiro-projeto-node) 🚀 Done :heavy_check_mark:
+- [06 - Iniciando Back-end do app]() :construction: In progress.. :construction:
 - ### FASE 03
-- [07 - Primeiro projeto com React]()
+- [07 - Primeiro projeto com React]() 
 - [08 - Iniciando Front-end Web]() 
 - [09 - Iniciando Aplicativo Mobile]() 
 - ### FASE 04
