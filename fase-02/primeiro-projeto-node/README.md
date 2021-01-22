@@ -38,7 +38,8 @@
 ## 💻 Projeto
 
 * Construção da aplicação com foco nos postulados SOLID
-* Desenvolvimento desde a estrutura e padrões com ferramentas: ESLint, Prettier, Typescript
+* Desenvolvimento desde a estrutura e padrões 
+* Utilização de tecnologias: ESLint, Prettier, Typescript
 
 ## 🚀 Instalação e execução
 
