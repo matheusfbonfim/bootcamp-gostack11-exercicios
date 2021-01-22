@@ -3,17 +3,17 @@
 </h1>
 
 <h3 align="center">
-  TypeScript
+  Primeiro projeto com Node.js
 </h3>
 
-<p align="center">Código do quarto módulo do <a href="https://rocketseat.com.br">Bootcamp GoStack 11</a> 🎓</p>
+<p align="center">Código do quinto módulo do <a href="https://rocketseat.com.br">Bootcamp GoStack 11</a> 🎓</p>
 
 <p align="center">
   <a href="https://www.linkedin.com/in/matheusfbonfim/">
     <img alt="Made by matheusfbonfim" src="https://img.shields.io/badge/made%20by-matheusfbonfim-%2304D361">
   </a>
 
-  <a href="https://github.com/matheusfbonfim/bootcamp-gostack11-exercicios/tree/master/nivel-1/typescript/commits/master">
+  <a href="https://github.com/matheusfbonfim/bootcamp-gostack11-exercicios/tree/master/fase-02/primeiro-projeto-node/commits/master">
     <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/matheusfbonfim/bootcamp-gostack11-exercicios.svg">
   </a>
 
@@ -38,21 +38,17 @@
 
 ## 💻 Projeto
 
-* Projeto de introdução ao TypeScript.
+* Construção da aplicação com foco nos postulados SOLID
+* Desenvolvimento desde a estrutura e padrões com ferramentas: ESLint, Prettier, Typescript
 
 ## 🚀 Instalação e execução
 
  <p><strong>Procedimentos</strong></p>
 
 1. Faça um clone desse repositório;
-2. Entre na pasta rodando `cd bootcamp-gostack11-exercicios/fase-01/typescript`;
+2. Entre na pasta rodando `cd bootcamp-gostack11-exercicios/fase-02/primeiro-projeto-node`;
 3. Rode `yarn` para instalar as dependências;
-4. Rode `yarn tsc` para transpilar de TS para JS;
-5. Rode `node dist/index.js`;
-
-## ℹ️ Informações extras
-
-* Todo código transpilado de TS para JS ficará dentro de dist conforme a configuração que fizemos em `outDir` dentro de tsConfig.js
+4. Rode `yarn dev:server` para iniciar o servidor;
 
 ## 🤔 Como contribuir
 
