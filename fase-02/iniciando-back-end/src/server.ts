@@ -2,6 +2,9 @@ import express from 'express';
 // Importando as rotas
 import routes from './routes';
 
+// Importando base de dados
+import './database';
+
 // Instanciando o express
 const app = express();
 
