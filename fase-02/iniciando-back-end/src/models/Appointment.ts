@@ -1,28 +1,22 @@
-// Importando o criador de id's
-import { uuid } from 'uuidv4';
-
-// // Interface do parametro do construtor
-// interface AppointmentConstructor {
-//   provider: string;
-//   date: Date;
-// }
+// Importando o banco de dados
+import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 
 // Criação de um modelo/entidade para o tipo appointment - agendamento
-// Importante para ser usado externamento, como o banco de dados e nas rotas
+// Importante para ser usado externamente, como o banco de dados e nas rotas
 // Cada agendamento é descrito por essa classe
+// Uso do entity como decorator para tabela no banco de dados
+@Entity('appointments')
 class Appointment {
+  // Considerado uma chave auto_increment
+  @PrimaryGeneratedColumn('uuid')
   id: string;
 
+  // Definida como uma coluna varchar - default
+  @Column()
   provider: string;
 
+  @Column('timestamp with time zone')
   date: Date;
-
-  // Omit -> Cria uma tipagem com todas propriedades da class, - id
-  constructor({ provider, date }: Omit<Appointment, 'id'>) {
-    this.id = uuid();
-    this.provider = provider;
-    this.date = date;
-  }
 }
 
 export default Appointment;
