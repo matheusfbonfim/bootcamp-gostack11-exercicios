@@ -10,9 +10,7 @@ import Appointment from '../models/Appointment';
 class AppointmentsRepository extends Repository<Appointment> {
   // Procurar elemento pela Date e indica a existência ou não
   public async findByDate(date: Date): Promise<Appointment | null> {
-    // const findAppointment = this.appointments.find((appointment) => {
-    //   return isEqual(date, appointment.date);
-    // });
+    // Função async/await - necessário esperar a finalização
     const findAppointment = await this.findOne({
       where: { date },
     });

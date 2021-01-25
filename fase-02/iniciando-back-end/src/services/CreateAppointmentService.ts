@@ -3,6 +3,7 @@
 import { startOfHour } from 'date-fns';
 // Função para indicar o repositório dentro da class do service
 import { getCustomRepository } from 'typeorm';
+
 import Appointment from '../models/Appointment';
 import AppointmentsRepository from '../repositories/AppointmentsRepository';
 
@@ -27,7 +28,7 @@ class CreateAppointmentService {
     const appointmentDate = startOfHour(date);
 
     // Por meio do repositorio, verifica se tem agendamento na mesma data
-    const findAppointmentInSameDate = appointmentsRepository.findByDate(
+    const findAppointmentInSameDate = await appointmentsRepository.findByDate(
       appointmentDate,
     );
 

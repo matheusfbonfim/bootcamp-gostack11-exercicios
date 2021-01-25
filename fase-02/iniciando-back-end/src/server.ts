@@ -1,3 +1,6 @@
+// Utilizar os decoratos em typeorm - entidades
+import 'reflect-metadata';
+
 import express from 'express';
 // Importando as rotas
 import routes from './routes';

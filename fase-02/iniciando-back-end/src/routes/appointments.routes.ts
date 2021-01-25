@@ -4,7 +4,7 @@ import { Router } from 'express';
 // parseISO -> converte string em date do JS
 import { parseISO } from 'date-fns';
 
-// Importando database
+// Importando funções para acesso ao repositorio - database
 import { getCustomRepository } from 'typeorm';
 
 // Importando o repositório de appointment
@@ -26,12 +26,12 @@ const appointmentsRouter = Router();
 // http://localhost:3333/appointments
 
 // LISTAR todos os agendamentos
-appointmentsRouter.get('/', (request, response) => {
-  // Inicializa o repositórito que será utilizado
+appointmentsRouter.get('/', async (request, response) => {
+  // Inicializa/acesso ao repositórito que será utilizado
   const appointmentsRepository = getCustomRepository(AppointmentsRepository);
 
   // Busca todos os dados - find - direto de typeorm
-  const appointments = appointmentsRepository.find();
+  const appointments = await appointmentsRepository.find();
 
   return response.json(appointments);
 });
