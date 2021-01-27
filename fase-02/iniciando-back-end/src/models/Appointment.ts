@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 // Importando o banco de dados
 import {
   Entity,
@@ -5,7 +6,12 @@ import {
   PrimaryGeneratedColumn,
   CreateDateColumn,
   UpdateDateColumn,
+  ManyToOne,
+  JoinColumn,
 } from 'typeorm';
+
+// Importa model de user -> Relacionamento (chave estrangeira)
+import User from './User';
 
 // Criação de um modelo/entidade para o tipo appointment - agendamento
 // Importante para ser usado externamente, como o banco de dados e nas rotas
@@ -19,7 +25,13 @@ class Appointment {
 
   // Definida como uma coluna varchar - default
   @Column()
-  provider: string;
+  provider_id: string;
+
+  // Relacionamento com a table User
+  // Muitos agendamentos para um prestador de serviço
+  @ManyToOne(() => User) // Função que retorna qual o model quando a variavel abaixo for chamada
+  @JoinColumn({ name: 'provider_id' }) // Coluna que identifica o prestador do agendamento
+  provider: User; // Propriedade -> Tipo - instancia da class User
 
   @Column('timestamp with time zone')
   date: Date;

@@ -30,9 +30,11 @@ class User {
 
   // O typeorm já tem um tipo de variavel para armazenar a data de criação
   @CreateDateColumn()
+  // eslint-disable-next-line camelcase
   create_at: Date;
 
   @UpdateDateColumn()
+  // eslint-disable-next-line camelcase
   update_at: Date;
 }
 
