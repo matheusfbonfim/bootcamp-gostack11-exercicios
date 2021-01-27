@@ -1,4 +1,6 @@
 import { getRepository } from 'typeorm';
+// Importa biblioteca de criptografia de senha
+import { hash } from 'bcryptjs';
 import User from '../models/User';
 
 /**
@@ -28,12 +30,15 @@ class createUserService {
       throw new Error('Email adress already used');
     }
 
+    // Criptografando a senha
+    const hashedPassword = await hash(password, 8);
+
     // Cria usuario -> Não precisa do await pois não salva no banco
     // Cria somente a instância da class usuário
     const user = usersRepository.create({
       name,
       email,
-      password,
+      password: hashedPassword,
     });
 
     // Salvando no banco

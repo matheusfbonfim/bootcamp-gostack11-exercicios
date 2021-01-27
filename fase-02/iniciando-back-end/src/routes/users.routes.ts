@@ -23,8 +23,10 @@ usersRouter.post('/', async (request, response) => {
     // Função assincrona - banco de dados
     const user = await createUser.execute({ name, email, password });
 
-    return response.json(user);
+    // Por segurança, excluir a senha do retorno (não afeita o banco)
+    delete user.password;
 
+    return response.json(user);
   } catch (err) {
     return response.status(400).json({ error: err.message });
   }
