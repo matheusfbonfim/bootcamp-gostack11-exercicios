@@ -30,7 +30,7 @@ export default class AlterProviderFieldToProviderId1611690545908
         name: 'AppointmentProvider',
         // Coluna que vai receber a chave estrangeira
         columnNames: ['provider_id'],
-        // Nome da coluna, na tabela de usuario que representa o provider_id
+        // Nome da coluna na tabela de usuario que representa o provider_id
         referencedColumnNames: ['id'],
         // Nome da tabela que irá fazer referência com esse campo
         referencedTableName: 'users',
