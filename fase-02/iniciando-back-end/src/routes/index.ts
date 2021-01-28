@@ -3,6 +3,7 @@ import { Router } from 'express';
 // Importar rotas
 import appointmentsRouter from './appointments.routes';
 import usersRouter from './users.routes';
+import sessionsRouter from './sessions.routes';
 
 // Variavel do tipo rota - Modulo de rota do express
 const routes = Router();
@@ -12,5 +13,7 @@ const routes = Router();
 routes.use('/appointments', appointmentsRouter);
 
 routes.use('/users', usersRouter);
+
+routes.use('/sessions', sessionsRouter);
 
 export default routes;
