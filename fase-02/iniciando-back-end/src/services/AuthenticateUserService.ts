@@ -1,6 +1,7 @@
 import { getRepository } from 'typeorm';
 // Importa biblioteca de criptografia de senha
 import { compare } from 'bcryptjs';
+import { sign } from 'jsonwebtoken';
 import User from '../models/User';
 
 // Tipagem dos parametros
@@ -11,6 +12,7 @@ interface Request {
 
 interface Response {
   user: User;
+  token: string;
 }
 
 // Autentifica - Regra de negocio - Acesso ao banco por meio de repo.
@@ -41,7 +43,15 @@ class AuthenticateUserService {
     delete user.password;
 
     // Usuário autênticado
-    return { user };
+    const token = sign({}, 'ec0398f5191fa1c5137b246f9b70a9a9', {
+      subject: user.id,
+      expiresIn: '1d',
+    });
+
+    return {
+      user,
+      token,
+    };
   }
 }
 
