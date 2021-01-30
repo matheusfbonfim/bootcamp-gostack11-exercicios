@@ -1,7 +1,6 @@
 // Importar Router -> Modulo de rotas do express
 import { Router } from 'express';
-// Importar funções da biblioteca de datas e horas
-// parseISO -> converte string em date do JS
+// Importar funções da biblioteca de datas e horas // parseISO -> converte string em date do JS
 import { parseISO } from 'date-fns';
 
 // Importando funções para acesso ao repositorio - database
@@ -12,6 +11,9 @@ import AppointmentsRepository from '../repositories/AppointmentsRepository';
 
 // Importações de Services
 import CreateAppointmentService from '../services/CreateAppointmentService';
+
+// Importando middleware de autenticação
+import ensureAuthenticated from '../middlewares/ensureAuthenticated';
 
 // ==============================================================
 // INSTÂNCIAS
@@ -24,6 +26,10 @@ const appointmentsRouter = Router();
 // Não é necessário identificar a rota por completo pois no
 // index está sendo indicado
 // http://localhost:3333/appointments
+
+// AUTENTICAÇÃO INICIAL DE TODAS ROTAS
+// Aplicação em todas as rotas de agendamento
+appointmentsRouter.use(ensureAuthenticated);
 
 // LISTAR todos os agendamentos
 appointmentsRouter.get('/', async (request, response) => {
@@ -51,7 +57,7 @@ appointmentsRouter.post('/', async (request, response) => {
       provider_id,
       date: parsedDate,
     });
-    
+
     return response.json(appointment);
   } catch (err) {
     return response.status(400).json({ error: err.message });

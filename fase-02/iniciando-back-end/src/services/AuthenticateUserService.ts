@@ -3,6 +3,8 @@ import { getRepository } from 'typeorm';
 import { compare } from 'bcryptjs';
 import { sign } from 'jsonwebtoken';
 import User from '../models/User';
+// Importando configuração - info token
+import authConfig from '../config/auth';
 
 // Tipagem dos parametros
 interface Request {
@@ -42,10 +44,13 @@ class AuthenticateUserService {
     // Não mostrar a senha como resposta
     delete user.password;
 
+    // Info de config token
+    const { secret, expiresIn } = authConfig.jwt;
+
     // Usuário autênticado
-    const token = sign({}, 'ec0398f5191fa1c5137b246f9b70a9a9', {
+    const token = sign({}, secret, {
       subject: user.id,
-      expiresIn: '1d',
+      expiresIn,
     });
 
     return {
