@@ -9,6 +9,15 @@ import { verify } from 'jsonwebtoken';
 // Informações de token
 import authConfig from '../config/auth';
 
+// ===========================================================
+
+// Tipagem - decoded
+interface TokenPayload {
+  iat: number;
+  exp: number;
+  sub: string;
+}
+
 export default function ensureAuthenticated(
   request: Request,
   response: Response,
@@ -31,8 +40,17 @@ export default function ensureAuthenticated(
   // Verify dará erro caso o token nao seja valido
   try {
     const decoded = verify(token, authConfig.jwt.secret);
-    // Validadado
-    console.log(decoded);
+
+    // Coloca tipagem para o decoded
+    const { sub } = decoded as TokenPayload;
+
+    // Inserir informações em request -> proximas rotas
+    // user -> Informa qual usuario está fazendo a requisição
+    request.user = {
+      id: sub,
+    };
+
+    // Validado
     // Permitido proximas rotas
     return next();
   } catch {

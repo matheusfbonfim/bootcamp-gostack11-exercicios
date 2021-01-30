@@ -33,6 +33,8 @@ appointmentsRouter.use(ensureAuthenticated);
 
 // LISTAR todos os agendamentos
 appointmentsRouter.get('/', async (request, response) => {
+  // console.log(request.user); -> Disponível a informação do id do usuário
+
   // Inicializa/acesso ao repositórito que será utilizado
   const appointmentsRepository = getCustomRepository(AppointmentsRepository);
 
