@@ -2,17 +2,28 @@
 import { Router } from 'express';
 
 // Importando o service
+// Importando - upload de arquivos
+import multer from 'multer';
+import uploadConfig from '../config/upload';
+
 import CreateUserService from '../services/CreateUserService';
+
+// Middleware - Autenticação
+import ensureAuthenticated from '../middlewares/ensureAuthenticated';
 
 // ==============================================================
 // INSTÂNCIAS
 
 const usersRouter = Router();
 
+// Instancia do multer
+const upload = multer(uploadConfig); // -> Alguns métodos para fazer o up
+
 // ==============================================================
 // ROTAS
 
-// CRIAÇÃO de agendamento
+// CRIAÇÃO de usuário
+// Não precisa de validação para criar o usuário
 usersRouter.post('/', async (request, response) => {
   try {
     const { name, email, password } = request.body;
@@ -31,5 +42,18 @@ usersRouter.post('/', async (request, response) => {
     return response.status(400).json({ error: err.message });
   }
 });
+
+// Alteração - imagem avatar
+// Precisa validação - autenticação
+usersRouter.patch(
+  '/avatar',
+  ensureAuthenticated,
+  upload.single('avatar'),
+  async (request, response) => {
+    console.log(request.file);
+
+    return response.json({ ok: 'true' });
+  },
+);
 
 export default usersRouter;
