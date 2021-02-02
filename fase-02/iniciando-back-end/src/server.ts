@@ -8,11 +8,19 @@ import routes from './routes';
 // Importando base de dados
 import './database';
 
+// Importando a rota de upload de arquivos
+import uploadConfig from './config/upload';
+
+// =================================================
+
 // Instanciando o express
 const app = express();
 
 // Aplicação entender o formato JSON nas requisições
 app.use(express.json());
+
+// Rota para mostrar a imagem do avatar ao usuário
+app.use('/files', express.static(uploadConfig.directory));
 
 // Define todas as rotas dentro do app
 app.use(routes);
