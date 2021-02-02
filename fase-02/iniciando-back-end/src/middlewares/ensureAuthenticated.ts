@@ -9,6 +9,9 @@ import { verify } from 'jsonwebtoken';
 // Informações de token
 import authConfig from '../config/auth';
 
+// Classe de erro
+import AppError from '../errors/AppError';
+
 // ===========================================================
 
 // Tipagem - decoded
@@ -29,7 +32,7 @@ export default function ensureAuthenticated(
 
   // Se não existir
   if (!authHeader) {
-    throw new Error('JWT Token is missing');
+    throw new AppError('JWT Token is missing', 401 );
   }
 
   // Bearer (JWT Token)
@@ -54,6 +57,6 @@ export default function ensureAuthenticated(
     // Permitido proximas rotas
     return next();
   } catch {
-    throw new Error('Invalid JWT Token');
+    throw new AppError('Invalid JWT Token', 401);
   }
 }

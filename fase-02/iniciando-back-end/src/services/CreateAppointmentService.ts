@@ -7,6 +7,9 @@ import { getCustomRepository } from 'typeorm';
 import Appointment from '../models/Appointment';
 import AppointmentsRepository from '../repositories/AppointmentsRepository';
 
+// Classe de erro
+import AppError from '../errors/AppError';
+
 /**
  * Recebimento das informações
  * Tratativa de erros/excessões
@@ -33,7 +36,7 @@ class CreateAppointmentService {
     );
 
     if (findAppointmentInSameDate) {
-      throw Error('This appointment is already booked');
+      throw new AppError('This appointment is already booked');
     }
 
     // Cria a instância do appointment mas não salva no banco de dados

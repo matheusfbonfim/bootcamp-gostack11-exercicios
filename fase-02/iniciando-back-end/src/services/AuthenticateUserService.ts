@@ -6,6 +6,9 @@ import User from '../models/User';
 // Importando configuração - info token
 import authConfig from '../config/auth';
 
+// Classe de erro
+import AppError from '../errors/AppError';
+
 // Tipagem dos parametros
 interface Request {
   email: string;
@@ -28,7 +31,7 @@ class AuthenticateUserService {
 
     // Verifica se o usuário foi encontrado
     if (!user) {
-      throw new Error('Incorrect email/password combination.');
+      throw new AppError('Incorrect email/password combination.', 401);
     }
 
     // user.password - Senha criptografada
@@ -38,7 +41,7 @@ class AuthenticateUserService {
 
     // Verifica a senha
     if (!passwordMatched) {
-      throw new Error('Incorrect email/password combination.');
+      throw new AppError('Incorrect email/password combination.', 401);
     }
 
     // Não mostrar a senha como resposta

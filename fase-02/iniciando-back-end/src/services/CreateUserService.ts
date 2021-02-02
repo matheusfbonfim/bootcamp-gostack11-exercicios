@@ -3,6 +3,9 @@ import { getRepository } from 'typeorm';
 import { hash } from 'bcryptjs';
 import User from '../models/User';
 
+// Classe de erro
+import AppError from '../errors/AppError';
+
 /**
  * Caso não seja necessário fazer alguma manipulação no banco de dados
  * que não seja as operações mais simples (create, update...), não precisa
@@ -27,7 +30,7 @@ class createUserService {
     });
 
     if (checkUserExists) {
-      throw new Error('Email adress already used');
+      throw new AppError('Email adress already used');
     }
 
     // Criptografando a senha

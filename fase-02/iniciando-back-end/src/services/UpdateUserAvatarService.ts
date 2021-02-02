@@ -5,9 +5,12 @@ import fs from 'fs';
 
 import User from '../models/User';
 
+
 // Contem o caminho até a pasta de imagens - tmp
 import uploadConfig from '../config/upload';
 
+// Classe de erro
+import AppError from '../errors/AppError';
 // ==========================================================
 
 interface Request {
@@ -28,7 +31,7 @@ class UpdateUserAvatarService {
 
     // Verifica se o id está no banco
     if (!user) {
-      throw new Error('Only authenticated users can change avatar.');
+      throw new AppError('Only authenticated users can change avatar.', 401);
     }
 
     // Verifica se antes da atualização se já tinha avatar - imagem
