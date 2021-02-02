@@ -5,11 +5,16 @@ import path from 'path';
 // Criptografia - criar hash
 import crypto from 'crypto';
 
+const tmpFolder = path.resolve(__dirname, '..', '..', 'tmp');
+
 export default {
+  // Para ser usada fora - services
+  directory: tmpFolder,
+
   // Armazenar no momento os uploads no próprio disco da máquina
   storage: multer.diskStorage({
     // onde será armazenado os arquivos de upload
-    destination: path.resolve(__dirname, '..', '..', 'tmp'),
+    destination: tmpFolder,
     // Nome que o arquivo irá receber -> Garantir nomes unicos
     filename(request, file, callback) {
       // Nome atraves da hash

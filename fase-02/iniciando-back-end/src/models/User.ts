@@ -28,6 +28,9 @@ class User {
   @Column()
   password: string;
 
+  @Column()
+  avatar: string;
+
   // O typeorm já tem um tipo de variavel para armazenar a data de criação
   @CreateDateColumn()
   // eslint-disable-next-line camelcase

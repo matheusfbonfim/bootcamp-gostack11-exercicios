@@ -8,6 +8,9 @@ import uploadConfig from '../config/upload';
 
 import CreateUserService from '../services/CreateUserService';
 
+// Service - update da foto de avatar
+import UpdateUserAvatarService from '../services/UpdateUserAvatarService';
+
 // Middleware - Autenticação
 import ensureAuthenticated from '../middlewares/ensureAuthenticated';
 
@@ -50,9 +53,24 @@ usersRouter.patch(
   ensureAuthenticated,
   upload.single('avatar'),
   async (request, response) => {
-    console.log(request.file);
+    try {
+      // Instancia do service de inserção do file avatar
+      const updateUserAvatar = new UpdateUserAvatarService();
 
-    return response.json({ ok: 'true' });
+      // user_id -> vindo do request atraves do middleware de autenticação
+      // execute -> É uma promisse -> aguardar finalizar -> await
+      const user = await updateUserAvatar.execute({
+        user_id: request.user.id,
+        avatarFilename: request.file.filename,
+      });
+
+      // Não mostrar a senha
+      delete user.password;
+
+      return response.json(user);
+    } catch (err) {
+      return response.status(400).json({ error: err.message });
+    }
   },
 );
 
