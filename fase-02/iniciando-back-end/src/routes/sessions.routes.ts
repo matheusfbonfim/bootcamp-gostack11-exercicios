@@ -13,22 +13,17 @@ const sessionsRouter = Router();
 
 // CRIAÇÃO de autenticação
 sessionsRouter.post('/', async (request, response) => {
-  try {
-    const { email, password } = request.body;
+  const { email, password } = request.body;
 
-    const authenticatedUser = new AuthenticateUserService();
+  const authenticatedUser = new AuthenticateUserService();
 
-    const { user, token } = await authenticatedUser.execute({
-      email,
-      password,
-    });
+  const { user, token } = await authenticatedUser.execute({
+    email,
+    password,
+  });
 
-    // Regra de negócio - Service
-
-    return response.json({ user, token });
-  } catch (err) {
-    return response.status(err.statusCode).json({ error: err.message });
-  }
+  // Regra de negócio - Service
+  return response.json({ user, token });
 });
 
 export default sessionsRouter;
